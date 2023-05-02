@@ -4,9 +4,9 @@ const Intern = require('./lib/intern');
 const path = require('path');
 const inquirer = require('inquirer');
 const fs = require('fs');
-const render = require('./src/htmlTemplateLiteral.js')
+const render = require('./src/htmlTemplateLiteral.js');
 const directoryDist = require(__dirname, 'dist');
-const distPath = path.join(directoryDist, 'team.html');
+const distPath = path.join('directoryDist', 'team.html','');
 
 
 
@@ -44,7 +44,7 @@ function runApp() {
             answers.managerEmail,
             answers.managerOfficeNum
           );
-          teamMemebers.push(manager);
+          teamMembers.push(manager);
           idArray.push(answers.managerId);
           generateTeam();
         });
@@ -59,7 +59,7 @@ function runApp() {
           choices: [
             'Engineer',
             'Intern',
-            "I don't want to add any more team memebers",
+            "I don't want to add any more team members",
           ],
         },
       ])
@@ -102,7 +102,7 @@ function runApp() {
           }
         ])
         .then((answers) => {
-          const engineer= new Engineer(
+          const engineer = new Engineer(
             answers.engineerName,
             answers.engneerId,
             answers.engineerEmail,
@@ -149,10 +149,12 @@ function runApp() {
         compileTeam();
       });
     }
-    function makeTeam() {
+    function compileTeam() {
       if (!fs.existsSync(directoryDist)) {
         fs.mkdirSync(distPath, render(teamMembers))
       }
     }
     addManager();
   }
+
+  runApp();
