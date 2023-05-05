@@ -1,21 +1,22 @@
 {
-    "name": "team-profile-generator",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-      "test": "jest"
-    },
-    "directories": {
-      "lib": "lib"
-    },
-    "author": "",
-    "license": "ISC",
-    "devDependencies": {
-      "jest": "^24.9.0"
-    },
-    "dependencies": {
-      "inquirer": "8.2.4",
-      "path": "^0.12.7"
-    }
-  }
+  "name": "team-profile-generator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^24.9.0"
+  },
+  "dependencies": {
+    "inquirer": "8.2.4",
+    "path": "^0.12.7"
+  },
+  "keywords": [],
+  "description": ""
+}
