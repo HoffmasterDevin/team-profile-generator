@@ -1,7 +1,7 @@
-const generateTeam = team => {
+const compileTeam = team => {
     const genManager = manager => {
       return `  
-      <div class="card managerCard" style="width: 18rem;">
+      <div class="card" style="width: 18rem;">
       <div class="card-body">
         <h2 class="card-title">${manager.returnName()}</h2>
         <h3 class="card-subtitle mb-2 text-muted">${manager.returnRole()}</h3>
@@ -19,7 +19,7 @@ const generateTeam = team => {
   
     const genEngineer = engineer => {
       return `
-      <div class="card employeeCard" style="width: 18rem;">
+      <div class="card" style="width: 18rem;">
       <div class="card-body">
         <h2 class="card-title">${engineer.returnName()}</h2>
         <h3 class="card-subtitle mb-2 text-muted">${engineer.returnRole()}</h3>
@@ -37,7 +37,7 @@ const generateTeam = team => {
   
     const genIntern = intern => {``
       return `
-      <div class="card employeeCard" style="width: 18rem;">
+      <div class="card" style="width: 18rem;">
       <div class="card-body">
         <h2 class="card-title">${intern.returnName()}</h2>
         <h3 class="card-subtitle mb-2 text-muted">${intern.returnRole()}</h3>
@@ -77,8 +77,8 @@ const generateTeam = team => {
   module.exports = team => {
   
     return `
-    <!DOCTYPE html>
-  <html lang="en">
+    <!DOCTYPE html> 
+        <html lang="en">
   
   <head>
       <meta charset="UTF-8" />
@@ -86,21 +86,19 @@ const generateTeam = team => {
       <meta http-equiv="X-UA-Compatible" content="ie=edge" />
       <title>My Team</title>
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
-      <link rel="stylesheet" href="style.css">
-      <script src="https://kit.fontawesome.com/c502137733.js"></script>
   </head>
   
   <body>
       <div class="container-fluid">
           <div class="row">
-              <div class="col-12 p-5 mb-3 teamHeading">
+              <div class="col-12 p-5 mb-3">
                   <h1 class="text-center">My Team</h1>
               </div>
           </div>
       </div>
       <div class="container">
           <div class="row">
-              <div class="teamDiv col-12 d-flex justify-content-center">
+              <div class="col-12 d-flex justify-content-center">
                   ${compileTeam(team)}
               </div>
           </div>

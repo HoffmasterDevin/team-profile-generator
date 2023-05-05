@@ -1,12 +1,12 @@
-const Manager = require('./lib/manager');
-const Engineer = require('./lib/engineer');
-const Intern = require('./lib/intern');
+const Manager = require('./lib/Manager');
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
 const path = require('path');
 const inquirer = require('inquirer');
 const fs = require('fs');
 const render = require('./src/htmlTemplateLiteral.js');
-const directoryDist = require(__dirname, 'dist');
-const distPath = path.join('directoryDist', 'team.html','');
+const DIST_DIR = require(__dirname, 'dist');
+const distPath = path.join('DIST_DIR', 'team.html');
 
 
 
@@ -45,7 +45,7 @@ function runApp() {
             answers.managerOfficeNum
           );
           teamMembers.push(manager);
-          idArray.push(answers.managerId);
+          teamIds.push(answers.managerId);
           generateTeam();
         });
     }
@@ -110,7 +110,7 @@ function runApp() {
           );
         })
         teamMembers.push(engineer);
-        idArray.push(answers.engineerId);
+        teamIds.push(answers.engineerId);
         compileTeam();
     }
     function addIntern() {
@@ -145,14 +145,15 @@ function runApp() {
           answers.internSchool
         );
         teamMembers.push(intern);
-        idArray.push(internId);
+        teamIds.push(internId);
         compileTeam();
       });
     }
     function compileTeam() {
-      if (!fs.existsSync(directoryDist)) {
-        fs.mkdirSync(distPath, render(teamMembers))
+      if (!fs.existsSync('DIST_DIR')) {
+        fs.mkdirSync('DIST_DIR')
       }
+      fs.writeFileSync(distPath, render(teamMembers), 'utf-8');
     }
     addManager();
   }
