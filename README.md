@@ -14,7 +14,8 @@
   ## Usage
   After installation, run `node index.js`.
   ## Demo
-  
+  [Untitled_ May 6, 2023 7_33 AM.webm](https://user-images.githubusercontent.com/118146567/236624776-16e013e9-d17b-4f9a-9334-c1076ad165f5.webm)
+
   ## Tests
   After installation, run `npm test`.
   
